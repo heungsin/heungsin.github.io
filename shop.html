@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="(주)흥신산업 - 도로표지판·교통안전표지·지주 제작 전문기업">
+<title>제품몰 | (주)흥신산업</title>
+<link rel="icon" href="assets/logo.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body id="top">
+<header class="header"><div class="wrap head-inner"><a class="brand" href="index.html"><span class="mark"><img class="mark-img" src="assets/logo.png" alt="흥신산업 로고"></span><span><strong>(주)흥신산업</strong><small>HEUNGSIN INDUSTRY</small></span></a><button class="menu-btn" aria-label="메뉴 열기" aria-expanded="false">☰</button><nav class="nav" aria-label="주 메뉴"><div class="nav-item has-sub"><a href="company.html">회사 소개</a><div class="submenu"><a href="company-greeting.html">인사말</a><a href="company-history.html">연혁</a><a href="company-location.html">오시는 길</a></div></div><div class="nav-item has-sub"><a href="technology.html">보유 기술</a><div class="submenu"><a href="technology-patent.html">특허</a><a href="technology-certification.html">인증</a><a href="technology-design.html">디자인</a></div></div><div class="nav-item has-sub"><a href="products.html">제품 소개</a><div class="submenu"><a href="product-road.html">도로표지</a><a href="product-traffic.html">교통안전표지</a><a href="product-chevron.html">갈매기표지판</a><a href="product-post.html">도로안전표지판 지주</a></div></div><div class="nav-item"><a href="shop.html" aria-current="page">제품몰</a></div><div class="nav-item"><a href="contact.html">고객 문의</a></div></nav></div></header>
+<main>
+<section class="page-hero"><div class="wrap"><div class="crumb">HEUNGSIN INDUSTRY / SHOP</div><h1>제품몰</h1><p>흥신산업 전 제품의 규격을 한눈에 확인하고, 필요한 품목을 담아 한 번에 견적을 요청하세요.</p></div></section>
+<section class="section shop"><div class="wrap">
+<div class="shop-bar">
+<div class="shop-search"><input id="shop-search" type="search" placeholder="모델명, 품명, 규격 검색 (예: 900×900, 일방통행)" aria-label="제품 검색"></div>
+<select id="shop-sort" aria-label="정렬"><option value="">기본순</option><option value="size">규격 작은순</option></select>
+<button type="button" class="btn quote-btn" data-quote-open>견적함 <span class="badge" data-quote-count>0</span></button>
+</div>
+<div class="chips" id="shop-chips" role="group" aria-label="분류"></div>
+<p class="shop-count" id="shop-count"></p>
+<div class="shop-grid" id="grid"></div>
+<p class="shop-empty" id="shop-empty" hidden>검색 결과가 없습니다. 다른 검색어를 입력하거나 <a href="contact.html">고객 문의</a>로 연락해 주세요.</p>
+<div class="notice">※ 제품 이미지·모델명·규격은 흥신산업 카탈로그와 나라장터 종합쇼핑몰 등록 정보 기준입니다. 가격은 규격·수량·현장 조건에 따라 견적으로 안내드리며, 조달 구매는 나라장터 종합쇼핑몰에서 가능합니다. 표지 문안은 현장 협의 후 제작됩니다.</div>
+</div></section>
+
+<dialog id="detail" class="sheet" aria-label="제품 상세">
+<button type="button" class="sheet-close" data-close aria-label="닫기">✕</button>
+<div id="detail-body" class="detail-grid"></div>
+</dialog>
+
+<aside id="quote" class="drawer" aria-hidden="true">
+<div class="drawer-panel" role="dialog" aria-label="견적함">
+<div class="drawer-head"><h2>견적함 <span class="badge" data-quote-count>0</span></h2><button type="button" class="sheet-close static" data-quote-close aria-label="닫기">✕</button></div>
+<div class="drawer-scroll">
+<p id="quote-empty" class="quote-empty">담긴 품목이 없습니다.<br>제품 카드의 <b>견적 담기</b>를 눌러 추가하세요.</p>
+<ul id="quote-list" class="quote-list"></ul>
+<div id="quote-total" class="quote-total"></div>
+<form id="quote-form" class="quote-form" action="https://formsubmit.co/aa-0574@hanmail.net" method="POST" hidden>
+<input type="hidden" name="_subject" value="[흥신산업 제품몰] 견적 요청이 도착했습니다.">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_next" value="">
+<textarea id="quote-items" name="견적 품목" hidden></textarea>
+<h3>견적 요청 정보</h3>
+<div><label for="q-org">기관명 / 회사명</label><input id="q-org" name="기관명/회사명" required></div>
+<div class="two"><div><label for="q-name">담당자</label><input id="q-name" name="담당자" required></div><div><label for="q-phone">연락처</label><input id="q-phone" name="연락처" type="tel" required placeholder="010-0000-0000"></div></div>
+<div><label for="q-email">회신받을 이메일</label><input id="q-email" name="email" type="email" required placeholder="example@email.com"></div>
+<div class="two"><div><label for="q-region">납품 지역</label><input id="q-region" name="납품 지역" placeholder="예: 광주 광산구"></div><div><label for="q-date">희망 납기</label><input id="q-date" name="희망 납기" placeholder="예: 11월 말"></div></div>
+<div><label for="q-memo">요청사항</label><textarea id="q-memo" name="요청사항" placeholder="문안, 설치 여부, 구매 방식(나라장터·수의계약 등)을 적어주세요."></textarea></div>
+<button class="btn" type="submit">견적 요청 보내기 →</button>
+<p class="form-note">입력하신 정보는 견적 회신 목적으로만 사용됩니다.</p>
+</form>
+</div>
+</div>
+</aside>
+<button type="button" class="quote-fab" data-quote-open aria-label="견적함 열기">견적함 <span class="badge" data-quote-count>0</span></button>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+</main>
+<footer class="footer"><div class="wrap">
+<div class="footer-grid">
+<div><a class="brand" href="index.html"><span class="mark"><img class="mark-img" src="assets/logo.png" alt="흥신산업 로고"></span><span><strong>(주)흥신산업</strong><small>HEUNGSIN INDUSTRY</small></span></a><p style="margin-top:16px">표지판 및 지주 등 교통안전시설물을<br>생산하는 전문기업</p></div>
+<div><h4>CONTACT</h4><p>전남광주통합특별시 광산구 평동로803번길 141<br>TEL 062-943-0805~6 · FAX 062-943-0811<br>E-mail <a href="mailto:aa-0574@hanmail.net">aa-0574@hanmail.net</a></p></div>
+<div><h4>MENU</h4><div class="footer-links"><a href="company.html">회사 소개</a><a href="technology.html">보유 기술</a><a href="products.html">제품 소개</a><a href="contact.html">고객 문의</a></div></div>
+</div>
+<div class="copy">대표이사 진형장 &nbsp;|&nbsp; 사업자등록번호 410-81-84531 &nbsp;|&nbsp; COPYRIGHT © HEUNGSIN INDUSTRY CO., LTD. ALL RIGHTS RESERVED.</div>
+</div></footer>
+<a class="floating" href="#top" aria-label="맨 위로">↑</a>
+<script src="assets/products.js"></script><script src="assets/g2b-links.js"></script><script src="shop.js"></script><script src="script.js"></script>
+</body>
+</html>
